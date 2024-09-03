@@ -1,0 +1,60 @@
+/* Estilos para la tarjeta de recompensa */
+mat-card {
+  margin: 20px;
+  padding: 20px;
+  background: linear-gradient(90deg, #a1c4fd, #c2e9fb);
+  color: #333;
+  border-radius: 10px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
+
+mat-card-header {
+  background: linear-gradient(90deg, #a1c4fd, #c2e9fb);
+  color: white;
+  padding: 10px;
+  border-radius: 5px;
+}
+
+mat-card-title {
+  font-size: 24px;
+  font-weight: bold;
+}
+
+mat-card-content {
+  font-size: 18px;
+  margin-top: 10px;
+}
+
+mat-card-actions {
+  display: flex;
+  justify-content: flex-end;
+  margin-top: 20px;
+}
+
+button {
+  background: linear-gradient(90deg, #a1c4fd, #c2e9fb);
+  color: white;
+}
+
+button:hover {
+  background: linear-gradient(90deg, #c2e9fb, #a1c4fd);
+}
+
+/* Estilos para el contenedor del mensaje de no recompensa */
+.no-reward-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  height: 100%;
+  text-align: center;
+}
+
+.no-reward-container h1 {
+  color: #ff4081;
+}
+
+.no-reward-container p {
+  font-size: 1.2em;
+  color: #757575;
+}

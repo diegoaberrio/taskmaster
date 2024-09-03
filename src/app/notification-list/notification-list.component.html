@@ -1,0 +1,16 @@
+<div class="notification-container" *ngIf="notifications.length > 0; else noNotifications">
+  <h1>Notification List</h1>
+  <ul>
+    <li *ngFor="let notification of notifications" [class.read]="notification.is_read">
+      {{ notification.message }}
+      <button (click)="markAsRead(notification.id)" [disabled]="notification.is_read">Mark as Read</button>
+      <button (click)="deleteNotification(notification.id)">Delete</button>
+    </li>
+  </ul>
+</div>
+<ng-template #noNotifications>
+  <div class="notification-container">
+    <h1>No Notifications</h1>
+    <p>You have no notifications at this time.</p>
+  </div>
+</ng-template>

@@ -1,0 +1,16 @@
+<app-navbar></app-navbar>
+<router-outlet></router-outlet>
+<app-footer></app-footer>
+
+<div class="auth-buttons-container">
+  <!-- Botones de Login y Register, visibles solo si no está autenticado -->
+  <div *ngIf="!isLoggedIn">
+    <a routerLink="/login" class="auth-button">Login</a>
+    <a routerLink="/register" class="auth-button">Register</a>
+  </div>
+
+  <!-- Botón de Logout, visible solo si está autenticado -->
+  <div *ngIf="isLoggedIn">
+    <button (click)="logout()" class="auth-button">Logout</button>
+  </div>
+</div>

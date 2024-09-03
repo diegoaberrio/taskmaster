@@ -1,0 +1,42 @@
+.dashboard-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  height: calc(100vh - 160px); /* Altura del viewport menos el espacio para navbar y footer */
+  padding: 20px;
+  background: linear-gradient(to bottom, #ff4081, #ff79b0, #3f51b5, #2196F3, #21CBF3); /* Nuevo gradiente combinado */
+  color: white;
+  border-radius: 8px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+  margin: 20px;
+  margin-top: 80px; /* Añadir margen superior para evitar solapamiento con la navbar */
+  margin-bottom: 150px; /* Añadir margen inferior para evitar solapamiento con el footer */
+  box-sizing: border-box; /* Asegurar que padding y border se incluyan en el tamaño total */
+}
+
+h1 {
+  color: #ffeb3b;
+  animation: colorChange 5s infinite;
+}
+
+p {
+  font-size: 1.2em;
+  margin-bottom: 20px;
+}
+
+button {
+  margin: 10px;
+  display: flex;
+  align-items: center;
+}
+
+.dashboard-icon {
+  margin-right: 8px; /* Espacio entre el icono y el texto */
+}
+
+@keyframes colorChange {
+  0% { color: #ffeb3b; }
+  50% { color: #3f51b5; }
+  100% { color: #ffeb3b; }
+}

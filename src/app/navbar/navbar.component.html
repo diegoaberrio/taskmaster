@@ -1,0 +1,33 @@
+<mat-toolbar color="primary" class="navbar" [@fadeIn]>
+  <span class="app-title" [@bounce]>
+    <mat-icon class="app-icon">assignment</mat-icon> TaskMaster
+  </span>
+  <span class="spacer"></span>
+  <a mat-button routerLink="/dashboard" class="nav-link">
+    <mat-icon class="nav-icon">dashboard</mat-icon> Dashboard
+  </a>
+  <a mat-button routerLink="/tasks" class="nav-link" *ngIf="isLoggedIn">
+    <mat-icon class="nav-icon">task</mat-icon> Tasks
+  </a>
+  <a mat-button routerLink="/rewards" class="nav-link" *ngIf="isLoggedIn">
+    <mat-icon class="nav-icon">card_giftcard</mat-icon> Rewards
+  </a>
+  <a mat-button routerLink="/statistics" class="nav-link" *ngIf="isLoggedIn">
+    <mat-icon class="nav-icon">bar_chart</mat-icon> Statistics
+  </a>
+  <a mat-button routerLink="/notifications" class="nav-link" *ngIf="isLoggedIn">
+    <mat-icon class="nav-icon">notifications</mat-icon> Notifications
+  </a>
+  <a mat-button routerLink="/profile" class="nav-link" *ngIf="isLoggedIn">
+    <mat-icon class="nav-icon">account_circle</mat-icon> Profile
+  </a>
+  <a mat-button routerLink="/register" class="nav-link" *ngIf="!isLoggedIn">
+    <mat-icon class="nav-icon">person_add</mat-icon> Register
+  </a>
+  <a mat-button routerLink="/login" class="nav-link" *ngIf="!isLoggedIn">
+    <mat-icon class="nav-icon">login</mat-icon> Login
+  </a>
+  <button mat-button (click)="logout()" class="nav-link" *ngIf="isLoggedIn">
+    <mat-icon class="nav-icon">logout</mat-icon> Logout
+  </button>
+</mat-toolbar>

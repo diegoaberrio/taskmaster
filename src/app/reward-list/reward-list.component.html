@@ -1,0 +1,87 @@
+<div class="reward-list-header">
+  <mat-icon class="celebration-icon">celebration</mat-icon>
+  <h1 class="reward-list-title">Reward List</h1>
+</div>
+
+<div class="reward-list-container">
+  <ng-container *ngIf="rewards.length > 0; else noRewards">
+    <h1 class="reward-title">Rewards</h1>
+    <div class="reward-cards">
+      <div class="reward-card" *ngFor="let reward of rewards">
+        <mat-card>
+          <mat-card-header>
+            <div mat-card-avatar class="reward-icon-container">
+              <img src="/assets/reward-icon.png" alt="Reward Icon" class="reward-icon">
+            </div>
+            <mat-card-title>{{ reward.reward_name }}</mat-card-title>
+            <mat-card-subtitle>
+              <mat-icon class="points-icon">star</mat-icon>
+              {{ reward.points_required }} Points
+            </mat-card-subtitle>
+          </mat-card-header>
+          <mat-card-actions>
+            <button mat-button color="primary" (click)="editReward(reward)">
+              <mat-icon>edit</mat-icon>
+              Edit
+            </button>
+            <button mat-button color="warn" (click)="deleteReward(reward.id!)">
+              <mat-icon>delete</mat-icon>
+              Delete
+            </button>
+            <button mat-button (click)="redeemReward(reward.id!)">
+              <mat-icon>redeem</mat-icon>
+              Redeem
+            </button>
+          </mat-card-actions>
+        </mat-card>
+      </div>
+    </div>
+  </ng-container>
+  <ng-template #noRewards>
+    <h1>No Rewards Available</h1>
+    <p>There are no rewards to display at this time.</p>
+  </ng-template>
+</div>
+
+<!-- New Reward Form -->
+<div class="new-reward-container">
+  <mat-card>
+    <mat-card-header>
+      <mat-card-title>Add New Reward</mat-card-title>
+    </mat-card-header>
+    <mat-card-content>
+      <form (ngSubmit)="createReward()">
+        <mat-form-field appearance="fill">
+          <mat-label>Reward Name</mat-label>
+          <input matInput [(ngModel)]="newReward.reward_name" name="reward_name" required>
+        </mat-form-field>
+        <mat-form-field appearance="fill">
+          <mat-label>Points Required</mat-label>
+          <input matInput type="number" [(ngModel)]="newReward.points_required" name="points_required" required>
+        </mat-form-field>
+        <button mat-raised-button color="primary" type="submit">Add Reward</button>
+      </form>
+    </mat-card-content>
+  </mat-card>
+</div>
+
+<!-- Edit Reward Dialog -->
+<ng-template #editRewardDialog let-data="data">
+  <h1 mat-dialog-title>Edit Reward</h1>
+  <div mat-dialog-content>
+    <form>
+      <mat-form-field appearance="fill">
+        <mat-label>Reward Name</mat-label>
+        <input matInput [(ngModel)]="data.reward.reward_name" name="reward_name" required>
+      </mat-form-field>
+      <mat-form-field appearance="fill">
+        <mat-label>Points Required</mat-label>
+        <input matInput type="number" [(ngModel)]="data.reward.points_required" name="points_required" required>
+      </mat-form-field>
+    </form>
+  </div>
+  <div mat-dialog-actions>
+    <button mat-button mat-dialog-close>Cancel</button>
+    <button mat-button (click)="saveReward(data.reward)" cdkFocusInitial>Save</button>
+  </div>
+</ng-template>

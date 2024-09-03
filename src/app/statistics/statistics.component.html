@@ -1,0 +1,124 @@
+<div class="statistics-container">
+  <div class="statistics-header">
+    <mat-icon class="statistics-icon">insert_chart</mat-icon>
+    <h1 class="statistics-title">Statistics</h1>
+  </div>
+
+  <div class="statistics-content">
+    <!-- User Points Table and Top Users Chart -->
+    <mat-card class="statistics-card">
+      <mat-card-header>
+        <mat-card-title>
+          <mat-icon class="statistics-icon">group</mat-icon>
+          User Points
+        </mat-card-title>
+      </mat-card-header>
+      <mat-card-content>
+        <div class="chart-container">
+          <table mat-table [dataSource]="userStatisticsByPoints" class="mat-elevation-z8 user-points-table">
+            <ng-container matColumnDef="userId">
+              <th mat-header-cell *matHeaderCellDef> 
+                <mat-icon>person</mat-icon> User ID 
+              </th>
+              <td mat-cell *matCellDef="let element"> {{element.userId}} </td>
+            </ng-container>
+            <ng-container matColumnDef="name">
+              <th mat-header-cell *matHeaderCellDef> 
+                <mat-icon>person</mat-icon> Name 
+              </th>
+              <td mat-cell *matCellDef="let element"> 
+                <mat-icon>person</mat-icon> {{element.name}} 
+              </td>
+            </ng-container>
+            <ng-container matColumnDef="points">
+              <th mat-header-cell *matHeaderCellDef> 
+                <mat-icon>star</mat-icon> Points 
+              </th>
+              <td mat-cell *matCellDef="let element"> {{element.points}} </td>
+            </ng-container>
+            <tr mat-header-row *matHeaderRowDef="['name', 'points']"></tr>
+            <tr mat-row *matRowDef="let row; columns: ['name', 'points'];"></tr>
+          </table>
+          <div class="chart-wrapper">
+            <canvas id="topUsersChart"></canvas>
+          </div>
+        </div>
+      </mat-card-content>
+    </mat-card>
+
+    <!-- Tasks by Priority and Status Chart -->
+    <mat-card class="statistics-card">
+      <mat-card-header>
+        <mat-card-title>
+          <mat-icon class="statistics-icon">task</mat-icon>
+          Tasks by Priority and Status
+        </mat-card-title>
+      </mat-card-header>
+      <mat-card-content>
+        <div class="chart-wrapper">
+          <canvas id="tasksByPriorityChart"></canvas>
+        </div>
+      </mat-card-content>
+    </mat-card>
+
+    <!-- Workload Chart -->
+    <mat-card class="statistics-card">
+      <mat-card-header>
+        <mat-card-title>
+          <mat-icon class="statistics-icon">assignment</mat-icon>
+          Workload Distribution
+        </mat-card-title>
+      </mat-card-header>
+      <mat-card-content>
+        <div class="chart-wrapper">
+          <canvas id="workloadChart"></canvas>
+        </div>
+      </mat-card-content>
+    </mat-card>
+
+    <!-- Task Completion Chart -->
+    <mat-card class="statistics-card">
+      <mat-card-header>
+        <mat-card-title>
+          <mat-icon class="statistics-icon">check_circle</mat-icon>
+          Task Completion Status
+        </mat-card-title>
+      </mat-card-header>
+      <mat-card-content>
+        <div class="chart-wrapper">
+          <canvas id="taskCompletionChart"></canvas>
+        </div>
+      </mat-card-content>
+    </mat-card>
+
+    <!-- Top Redeemed Rewards Chart -->
+    <mat-card class="statistics-card">
+      <mat-card-header>
+        <mat-card-title>
+          <mat-icon class="statistics-icon">card_giftcard</mat-icon>
+          Top Redeemed Rewards
+        </mat-card-title>
+      </mat-card-header>
+      <mat-card-content>
+        <div class="chart-wrapper">
+          <canvas id="topRewardsChart"></canvas>
+        </div>
+      </mat-card-content>
+    </mat-card>
+
+    <!-- Popular Rewards Chart -->
+    <mat-card class="statistics-card">
+      <mat-card-header>
+        <mat-card-title>
+          <mat-icon class="statistics-icon">star</mat-icon>
+          Popular Rewards
+        </mat-card-title>
+      </mat-card-header>
+      <mat-card-content>
+        <div class="chart-wrapper">
+          <canvas id="popularRewardsChart"></canvas>
+        </div>
+      </mat-card-content>
+    </mat-card>
+  </div>
+</div>

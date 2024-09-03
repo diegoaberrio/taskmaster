@@ -1,0 +1,127 @@
+/* Estilos para el contenedor del detalle de la tarea */
+.task-detail-container {
+  display: flex;
+  justify-content: center;
+  margin: 20px;
+  margin-bottom: 100px; /* Añadir un margen inferior para evitar solapamiento con el footer */
+  animation: fadeIn 1s ease-in; /* Animación para que el contenedor se desvanezca */
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+mat-card {
+  position: relative;
+  width: 100%;
+  max-width: 600px;
+  background: linear-gradient(90deg, #a1c4fd, #c2e9fb); /* Gradiente pastel */
+  color: black; /* Texto en negro para mejor contraste */
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2); /* Sombra */
+  transition: transform 0.3s, box-shadow 0.3s;
+  border-radius: 8px; /* Bordes redondeados */
+  padding-top: 60px; /* Espacio para la pestaña */
+}
+
+mat-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
+}
+
+/* Estilos para las pestañas */
+.card-tab, .card-tab-back {
+  position: absolute;
+  top: -30px;
+  background: #ff4081; /* Color rosa oscuro */
+  color: white;
+  padding: 10px 20px;
+  border-radius: 8px 8px 0 0; /* Bordes superiores redondeados */
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2); /* Sombra */
+  font-size: 18px;
+  font-weight: bold;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.card-tab {
+  left: 20px;
+}
+
+.card-tab-back {
+  right: 20px;
+  background: #3f51b5; /* Color diferente para distinguir */
+}
+
+.card-tab-back a {
+  color: white;
+  text-decoration: none;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.card-tab-back a:hover {
+  text-decoration: underline;
+}
+
+/* Estilos para los iconos y el título */
+mat-card-title {
+  text-align: center;
+  font-size: 24px;
+  font-weight: bold;
+  margin-bottom: 20px;
+  color: white;
+}
+
+mat-card-title mat-icon {
+  margin-right: 8px;
+  color: white;
+  font-size: 30px;
+}
+
+mat-card-content p {
+  margin: 10px 0;
+  font-size: 16px;
+  line-height: 1.5;
+  color: black; /* Texto en negro para mejor contraste */
+}
+
+mat-card-content p strong {
+  color: #ff4081; /* Color rosa oscuro para los títulos */
+}
+
+/* Colores para los iconos de estado */
+.mat-icon.pending {
+  color: orange;
+}
+
+.mat-icon.in-progress {
+  color: blue;
+}
+
+.mat-icon.completed {
+  color: green;
+}
+
+.mat-icon.cancelled {
+  color: red;
+}
+
+/* Colores para los iconos de prioridad */
+.mat-icon.low {
+  color: green;
+}
+
+.mat-icon.medium {
+  color: orange;
+}
+
+.mat-icon.high {
+  color: red;
+}

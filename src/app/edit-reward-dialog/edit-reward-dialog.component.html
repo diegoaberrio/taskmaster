@@ -1,0 +1,25 @@
+<h1 mat-dialog-title class="dialog-title">Edit Reward</h1>
+<div mat-dialog-content class="dialog-content">
+  <form>
+    <mat-form-field appearance="outline" class="full-width">
+      <mat-label>Reward Name</mat-label>
+      <input matInput [(ngModel)]="data.reward.reward_name" name="reward_name" required>
+      <mat-icon matSuffix>edit</mat-icon>
+    </mat-form-field>
+    <mat-form-field appearance="outline" class="full-width">
+      <mat-label>Points Required</mat-label>
+      <input matInput type="number" [(ngModel)]="data.reward.points_required" name="points_required" required>
+      <mat-icon matSuffix>star</mat-icon>
+    </mat-form-field>
+  </form>
+</div>
+<div mat-dialog-actions class="dialog-actions">
+  <button mat-button (click)="onCancel()" color="warn">
+    <mat-icon>cancel</mat-icon>
+    Cancel
+  </button>
+  <button mat-button (click)="onSave()" color="primary">
+    <mat-icon>save</mat-icon>
+    Save
+  </button>
+</div>

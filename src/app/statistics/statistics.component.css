@@ -1,0 +1,102 @@
+.chart-wrapper {
+  position: relative;
+  height: 500px; /* Ajusta la altura si es necesario */
+  width: 80%; /* Aumenta el ancho del gráfico, puedes ajustar este valor */
+  margin: 0 auto; /* Centra el gráfico */
+}
+
+.statistics-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 20px;
+  gap: 20px;
+}
+
+.statistics-card {
+  width: 100%;
+  max-width: 80%; /* Aumenta el ancho del contenedor del gráfico */
+  margin-bottom: 20px;
+}
+
+.statistics-header {
+  display: flex;
+  align-items: center;
+  margin-bottom: 20px;
+}
+
+.statistics-title {
+  font-size: 2rem;
+  color: #333;
+  margin-left: 10px;
+}
+
+.statistics-content {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 100%;
+}
+
+.statistics-icon {
+  font-size: 24px;
+  margin-right: 8px;
+}
+
+.mat-card-title {
+  display: flex;
+  align-items: center;
+  color: #ff4500; /* Añadir color */
+  animation: fadeIn 1s ease-in-out; /* Añadir animación */
+}
+
+.loading-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: 20px;
+}
+
+.loading-container p {
+  margin-top: 10px;
+  font-size: 18px;
+  color: #666;
+}
+
+.error-container {
+  color: #d32f2f;
+  background-color: #fbe9e7;
+  border: 1px solid #d32f2f;
+  padding: 10px;
+  border-radius: 4px;
+  max-width: 800px;
+  width: 100%;
+  text-align: center;
+}
+
+.mat-table {
+  width: 100%;
+}
+
+.mat-header-cell, .mat-cell {
+  padding: 8px 16px;
+}
+
+.mat-header-cell {
+  font-weight: bold;
+}
+
+.mat-elevation-z8 {
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
+
+/* Añadir keyframes para la animación */
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}

@@ -1,0 +1,87 @@
+.user-profile-container {
+  display: flex;
+  justify-content: center;
+  margin: 20px;
+  margin-bottom: 100px; /* Añadir un margen inferior para evitar solapamiento con el footer */
+}
+
+mat-card {
+  width: 100%;
+  max-width: 600px;
+}
+
+.mat-card-header {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background: linear-gradient(90deg, #a1c4fd, #c2e9fb); /* Gradiente pastel */
+  padding: 10px;
+  border-radius: 5px;
+  margin-bottom: 20px;
+}
+
+.mat-card-title {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  color: white;
+}
+
+.profile-icon {
+  font-size: 30px;
+  animation: rotateIcon 2s linear infinite;
+}
+
+.profile-info {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  margin-bottom: 10px;
+}
+
+.info-icon {
+  color: #757575;
+}
+
+/* Animación para el icono */
+@keyframes rotateIcon {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
+}
+
+/* Animación para el título */
+.animated-title {
+  font-size: 24px;
+  font-weight: bold;
+  animation: fadeIn 2s ease-in-out;
+}
+
+/* Animación para el fadeIn del título */
+@keyframes fadeIn {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+
+.mat-form-field {
+  width: 100%;
+}
+
+button {
+  display: block;
+  width: 100%;
+  margin-top: 20px;
+  background: linear-gradient(90deg, #a1c4fd, #c2e9fb); /* Gradiente pastel */
+  color: white;
+}
+
+button:hover {
+  background: linear-gradient(90deg, #c2e9fb, #a1c4fd); /* Gradiente pastel */
+}

@@ -1,0 +1,19 @@
+<div class="redeem-container">
+  <mat-card>
+    <mat-card-header class="mat-card-header">
+      <mat-card-title>
+        <mat-icon class="redeem-icon">redeem</mat-icon>
+        <span class="animated-title">Redeem Reward</span>
+      </mat-card-title>
+    </mat-card-header>
+    <mat-card-content>
+      <form (ngSubmit)="onSubmit()">
+        <mat-form-field appearance="outline">
+          <mat-label>Reward ID</mat-label>
+          <input matInput type="number" [(ngModel)]="rewardId" name="rewardId" required>
+        </mat-form-field>
+        <button mat-raised-button color="primary" type="submit">Redeem</button>
+      </form>
+    </mat-card-content>
+  </mat-card>
+</div>

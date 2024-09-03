@@ -1,0 +1,33 @@
+<div class="task-detail-container">
+  <mat-card>
+    <div class="card-tab">
+      <mat-icon>info</mat-icon>
+      <span>Task Details</span>
+    </div>
+    <div class="card-tab-back">
+      <a [routerLink]="['/tasks']">
+        <mat-icon>arrow_back</mat-icon>
+        Back to List
+      </a>
+    </div>
+    <mat-card-content *ngIf="task">
+      <p><strong>Title:</strong> {{ task.title }}</p>
+      <p><strong>Description:</strong> {{ task.description }}</p>
+      <p><strong>Priority:</strong> 
+        <mat-icon [ngClass]="getPriorityColorClass(task.priority)">
+          {{ getPriorityIcon(task.priority) }}
+        </mat-icon> 
+        {{ task.priority | titlecase }}
+      </p>
+      <p><strong>Status:</strong> 
+        <mat-icon [ngClass]="getStatusColorClass(task.status)">
+          {{ getStatusIcon(task.status) }}
+        </mat-icon> 
+        {{ task.status | titlecase }}
+      </p>
+      <p><strong>User:</strong> {{ task.userName }}</p>
+      <p><strong>Start Date:</strong> {{ task.start_date | date:'short' }}</p>
+      <p><strong>Due Date:</strong> {{ task.due_date | date:'short' }}</p>
+    </mat-card-content>
+  </mat-card>
+</div>

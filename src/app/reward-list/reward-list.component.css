@@ -1,0 +1,152 @@
+.reward-list-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 20px;
+  background-color: #f0f8ff;
+  border-radius: 8px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+  margin-bottom: 50px; /* Ajusta este valor según la altura real de tu footer */
+}
+
+.reward-title {
+  font-size: 2em;
+  color: #ff4500;
+  margin-bottom: 20px;
+}
+
+.reward-cards {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 20px;
+}
+
+.reward-card {
+  width: 300px;
+  transition: transform 0.3s, box-shadow 0.3s;
+  background-color: #ffffff;
+  border: 1px solid #e0e0e0;
+  border-radius: 8px;
+  overflow: hidden;
+}
+
+.reward-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
+}
+
+.reward-icon-container {
+  background-color: #ffeb3b;
+  border-radius: 50%;
+  padding: 10px;
+}
+
+.reward-icon {
+  width: 40px;
+  height: 40px;
+}
+
+.points-icon {
+  color: #ffeb3b;
+}
+
+.mat-card-title {
+  color: #ff5722;
+}
+
+.mat-card-subtitle {
+  display: flex;
+  align-items: center;
+  gap: 5px;
+}
+
+.mat-card-actions button {
+  background-color: #4caf50;
+  color: white;
+  transition: background-color 0.3s;
+}
+
+.mat-card-actions button:hover {
+  background-color: #45a049;
+}
+
+.reward-list-header {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-top: 20px;
+  margin-bottom: 20px;
+  animation: bounceIn 1s;
+}
+
+.celebration-icon {
+  font-size: 40px;
+  margin-right: 10px;
+  color: gold;
+  animation: pulse 2s infinite;
+}
+
+.reward-list-title {
+  font-size: 2rem;
+  color: #333;
+  font-weight: bold;
+}
+
+.new-reward-container {
+  width: 100%;
+  max-width: 600px;
+  margin: 20px auto;
+  padding: 20px;
+  background-color: #ffffff;
+  border-radius: 8px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
+
+.mat-form-field {
+  width: 100%;
+}
+
+.mat-dialog-content {
+  font-size: 16px;
+  color: #333;
+}
+
+.mat-dialog-actions {
+  display: flex;
+  justify-content: flex-end;
+  gap: 10px;
+}
+
+button {
+  display: flex;
+  align-items: center;
+  gap: 5px;
+}
+
+button mat-icon {
+  font-size: 18px;
+}
+
+@keyframes bounceIn {
+  from {
+    opacity: 0;
+    transform: scale(0.3);
+  }
+  to {
+    opacity: 1;
+    transform: scale(1);
+  }
+}
+
+@keyframes pulse {
+  0% {
+    transform: scale(1);
+  }
+  50% {
+    transform: scale(1.1);
+  }
+  100% {
+    transform: scale(1);
+  }
+}

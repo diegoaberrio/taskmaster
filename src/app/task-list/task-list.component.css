@@ -1,0 +1,160 @@
+.task-list-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding-top: 80px; /* Espacio adicional para evitar solapamiento con la navbar */
+  padding-bottom: 100px; /* Añadir espacio para el footer */
+}
+
+.task-filters {
+  margin-bottom: 20px;
+  display: flex;
+  gap: 20px; /* Mayor separación entre los filtros */
+  flex-wrap: wrap; /* Permitir que los filtros se envuelvan en pantallas pequeñas */
+  justify-content: center; /* Centrar los filtros horizontalmente */
+}
+
+.mat-form-field {
+  width: 200px; /* Ajuste del tamaño del campo del formulario */
+}
+
+.task-card {
+  width: 100%;
+  max-width: 600px;
+  margin-bottom: 15px;
+  transition: transform 0.3s, box-shadow 0.3s;
+  position: relative;
+}
+
+.task-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
+}
+
+.user-info {
+  position: absolute;
+  top: 10px;
+  right: 10px;
+  display: flex;
+  align-items: center;
+  gap: 5px;
+  background: #fff;
+  padding: 5px 10px;
+  border-radius: 15px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+}
+
+.user-info mat-icon {
+  font-size: 20px;
+}
+
+.mat-icon.pending {
+  color: orange;
+}
+
+.mat-icon.in-progress {
+  color: blue;
+}
+
+.mat-icon.completed {
+  color: green;
+}
+
+.mat-icon.cancelled {
+  color: red;
+}
+
+/* Estilos adicionales para iconos en el mat-select */
+.mat-option .mat-icon.pending {
+  color: orange;
+}
+
+.mat-option .mat-icon.in-progress {
+  color: blue;
+}
+
+.mat-option .mat-icon.completed {
+  color: green;
+}
+
+.mat-option .mat-icon.cancelled {
+  color: red;
+}
+
+.mat-option .mat-icon.user-icon {
+  color: gray;
+}
+
+/* Estilos para iconos de prioridad */
+.mat-option .mat-icon.low, .mat-icon.low {
+  color: green;
+}
+
+.mat-option .mat-icon.medium, .mat-icon.medium {
+  color: orange;
+}
+
+.mat-option .mat-icon.high, .mat-icon.high {
+  color: red;
+}
+
+/* Ajustes adicionales para los iconos y textos de estado y prioridad en las tarjetas */
+.task-status, .task-priority {
+  display: flex;
+  align-items: center;
+  gap: 5px;
+}
+
+.task-status mat-icon, .task-priority mat-icon {
+  vertical-align: middle;
+}
+
+.spacer {
+  flex: 1 1 auto;
+}
+
+/* Estilos para el nuevo filtro por rango de fechas */
+.mat-select-trigger {
+  display: flex;
+  align-items: center;
+}
+
+.mat-select-trigger .mat-icon {
+  margin-right: 8px;
+}
+
+.mat-option .day-icon, .mat-icon.day-icon {
+  color: teal;
+}
+
+.mat-option .week-icon, .mat-icon.week-icon {
+  color: purple;
+}
+
+.mat-option .month-icon, .mat-icon.month-icon {
+  color: brown;
+}
+
+/* Estilos para el botón flotante de creación de tareas */
+.create-task-button {
+  position: fixed;
+  bottom: 100px; /* Ajustar la posición para que no se solape con el footer */
+  right: 300px;
+  width: 56px; /* Ancho ajustado */
+  height: 56px; /* Ajuste de altura para mantener la forma de botón fab */
+  background: linear-gradient(90deg, #2196F3, #21CBF3);
+  color: white;
+  font-size: 24px; /* Ajuste de tamaño de fuente */
+  border-radius: 50%; 
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.create-task-button:hover {
+  background: linear-gradient(90deg, #21CBF3, #2196F3);
+}
+
+.create-task-icon {
+  font-size: 24px; /* Ajuste de tamaño del icono */
+}

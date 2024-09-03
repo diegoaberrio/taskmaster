@@ -1,0 +1,15 @@
+<div class="dashboard-container">
+  <h1 *ngIf="isLoggedIn; else guestWelcome">
+    Welcome, {{ userName }}!
+  </h1>
+  <ng-template #guestWelcome>
+    <h1>Welcome to TaskMaster</h1>
+    <p>Manage your tasks efficiently and earn rewards!</p>
+    <button mat-raised-button color="primary" routerLink="/register">
+      <mat-icon class="dashboard-icon">person_add</mat-icon> Register
+    </button>
+    <button mat-raised-button color="accent" routerLink="/login">
+      <mat-icon class="dashboard-icon">login</mat-icon> Login
+    </button>
+  </ng-template>
+</div>

@@ -1,0 +1,32 @@
+.footer {
+  position: fixed;
+  bottom: 0;
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background: linear-gradient(90deg, #2196F3, #21CBF3);
+  color: white;
+  padding: 10px;
+}
+
+.footer a {
+  color: white;
+  text-decoration: none;
+  transition: transform 0.3s, color 0.3s;
+}
+
+.footer a:hover {
+  transform: scale(1.2);
+  color: #FFD700; /* Golden color */
+}
+
+.footer .spacer {
+  flex: 1 1 auto;
+}
+
+.social-icon {
+  width: 40px;
+  height: 40px;
+  margin-left: 10px;
+}

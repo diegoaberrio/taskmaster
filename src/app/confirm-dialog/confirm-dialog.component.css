@@ -1,0 +1,20 @@
+mat-dialog-content {
+  font-size: 16px;
+  color: #333;
+}
+
+mat-dialog-actions {
+  display: flex;
+  justify-content: flex-end;
+  gap: 10px;
+}
+
+button {
+  display: flex;
+  align-items: center;
+  gap: 5px;
+}
+
+button mat-icon {
+  font-size: 18px;
+}

@@ -1,0 +1,134 @@
+<div class="task-list-container">
+  <div class="task-filters">
+    <mat-form-field appearance="outline">
+      <mat-label>
+        <mat-icon>filter_list</mat-icon>
+        Filter by Status
+      </mat-label>
+      <mat-select [(value)]="selectedStatus" (selectionChange)="applyFilter()">
+        <mat-option value="">All</mat-option>
+        <mat-option value="pending">
+          <mat-icon class="pending">hourglass_empty</mat-icon>
+          Pending
+        </mat-option>
+        <mat-option value="in-progress">
+          <mat-icon class="in-progress">autorenew</mat-icon>
+          In Progress
+        </mat-option>
+        <mat-option value="completed">
+          <mat-icon class="completed">check_circle</mat-icon>
+          Completed
+        </mat-option>
+        <mat-option value="cancelled">
+          <mat-icon class="cancelled">cancel</mat-icon>
+          Cancelled
+        </mat-option>
+      </mat-select>
+    </mat-form-field>
+
+    <mat-form-field appearance="outline">
+      <mat-label>
+        <mat-icon>person</mat-icon>
+        Filter by User
+      </mat-label>
+      <mat-select [(value)]="selectedUser" (selectionChange)="applyFilter()">
+        <mat-option value="">All</mat-option>
+        <mat-option *ngFor="let user of users" [value]="user.id">
+          <mat-icon class="user-icon">account_circle</mat-icon>
+          {{ user.name }}
+        </mat-option>
+      </mat-select>
+    </mat-form-field>
+
+    <mat-form-field appearance="outline">
+      <mat-label>
+        <mat-icon>date_range</mat-icon>
+        Filter by Date Range
+      </mat-label>
+      <mat-select [(value)]="selectedDateRange" (selectionChange)="applyFilter()">
+        <mat-option value="day">
+          <mat-icon class="day-icon">today</mat-icon>
+          Day
+        </mat-option>
+        <mat-option value="week">
+          <mat-icon class="week-icon">date_range</mat-icon>
+          Week
+        </mat-option>
+        <mat-option value="month">
+          <mat-icon class="month-icon">event</mat-icon>
+          Month
+        </mat-option>
+      </mat-select>
+    </mat-form-field>
+
+    <mat-form-field appearance="outline">
+      <mat-label>
+        <mat-icon>priority_high</mat-icon>
+        Filter by Priority
+      </mat-label>
+      <mat-select [(value)]="selectedPriority" (selectionChange)="applyFilter()">
+        <mat-option value="">All</mat-option>
+        <mat-option value="low">
+          <mat-icon class="low">arrow_downward</mat-icon>
+          Low
+        </mat-option>
+        <mat-option value="medium">
+          <mat-icon class="medium">arrow_forward</mat-icon>
+          Medium
+        </mat-option>
+        <mat-option value="high">
+          <mat-icon class="high">arrow_upward</mat-icon>
+          High
+        </mat-option>
+      </mat-select>
+    </mat-form-field>
+  </div>
+
+  <div class="task-card" *ngFor="let task of filteredTasks">
+    <mat-card>
+      <mat-card-header>
+        <div mat-card-avatar class="task-icon-container">
+          <img src="/assets/task-icon.png" alt="Task Icon" class="task-icon">
+        </div>
+        <mat-card-title>{{ task.title }}</mat-card-title>
+        <div class="user-info">
+          <mat-icon>account_circle</mat-icon>
+          <span>{{ getUserName(task.user_id) }}</span>
+        </div>
+        <mat-card-subtitle>
+          <mat-icon [ngClass]="getPriorityColorClass(task.priority)">{{ getPriorityIcon(task.priority) }}</mat-icon>
+          {{ task.priority | titlecase }} Priority
+        </mat-card-subtitle>
+      </mat-card-header>
+      <mat-card-content>
+        <p>{{ task.description }}</p>
+        <div class="task-status">
+          <mat-icon [ngClass]="getStatusColorClass(task.status)">{{ getStatusIcon(task.status) }}</mat-icon>
+          {{ task.status | titlecase }} Status
+        </div>
+      </mat-card-content>
+      <mat-card-actions>
+        <button mat-button (click)="confirmDeleteTask(task.id!)">
+          <mat-icon>delete</mat-icon>
+          Delete
+        </button>
+        <button mat-button (click)="completeTask(task.id!)" *ngIf="task.status !== 'completed'">
+          <mat-icon>check_circle</mat-icon>
+          Complete
+        </button>
+        <a mat-button [routerLink]="['/edit-task', task.id]">
+          <mat-icon>edit</mat-icon>
+          Edit
+        </a>
+        <a mat-button [routerLink]="['/tasks', task.id]">
+          <mat-icon>visibility</mat-icon>
+          View Details
+        </a>
+      </mat-card-actions>
+    </mat-card>
+  </div>
+
+  <button mat-fab class="create-task-button" (click)="navigateToCreateTask()" matTooltip="Create New Task">
+    <mat-icon class="create-task-icon">add</mat-icon>
+  </button>
+</div>

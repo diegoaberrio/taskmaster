@@ -1,0 +1,35 @@
+.dialog-title {
+  font-size: 24px;
+  font-weight: bold;
+  color: #333;
+}
+
+.dialog-content {
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+}
+
+.mat-form-field {
+  width: 100%;
+}
+
+.full-width {
+  width: 100%;
+}
+
+.dialog-actions {
+  display: flex;
+  justify-content: flex-end;
+  gap: 10px;
+}
+
+button {
+  display: flex;
+  align-items: center;
+  gap: 5px;
+}
+
+button mat-icon {
+  font-size: 18px;
+}
